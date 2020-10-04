@@ -50,7 +50,7 @@ values["USD"] = 1
 
 # Get user input to see which currencies they would like to exchange
 def exchange_currency():
-    print("(if you do not know your exchange symbol, please enter \"help\" to refer to the exchange rates page)")
+    print("\n(if you do not know your exchange symbol, please enter \"help\" to refer to the exchange rates page)\n")
     before_currency = input("Please enter the Exchange Symbol of the currency you wish to exchange: ")
     if before_currency.lower() == "help":
         print_currencies()
@@ -73,8 +73,8 @@ def exchange_currency():
 
         after_value = before_value // exchange_before * exchange_after
         after_value = round(after_value, 2)
-        print(str(before_value) + " " + str(before_currency) + " was converted to " + str(after_value) + " " + str(after_currency))
-        print("Thank you for using this service, we hope to see you soon! ")
+        print("\n" + '\033[1m' + str(before_value) + " " + str(before_currency) + '\033[0m' + " was converted to " + '\033[1m' + str(after_value) + " " + str(after_currency) + '\033[0m')
+        print("Thank you for using this service, we hope to see you soon! \n")
 
 
 
