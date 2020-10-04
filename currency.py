@@ -37,6 +37,7 @@ US Dollar: 1
 '''
 
 user_input = float(input("How many USD to TWD? "))
-user_input *= 28.95307 
-user_input = user_input     # change decimal to two points
-print(user_input)
+TWD = 28.95307
+output = user_input * TWD
+output = round(output, 2)     # change decimal to two points
+print(str(user_input) + " USD was converted to: " + str(output) + " TWD. \nThank you for using our service.")
