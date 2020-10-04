@@ -1,12 +1,13 @@
 # currency exchange calculator 
-# based on approximate set values 
+
 # values used were collected for the date: 
 # October 1, 2020
 
+# values from: 
+# https://www1.oanda.com/currency/comparison
+
 # convert 1 USD to -> 
 '''
-values from: 
-https://www1.oanda.com/currency/comparison
 australian_dollar = 1.4003
 brazilian_real = 5.6274
 british_pound = 0.77683
@@ -33,7 +34,6 @@ taiwan_dollar = 28.95307
 thai_baht = 31.59357
 turkish_lira = 7.75733
 us_dollar = 1
-
 '''
 
 '''
