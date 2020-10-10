@@ -8,8 +8,8 @@
 
 
 def main(): 
-    print(values)
-    que = int(input("Helo, please enter a number of what you would like to do today: \n1) exchange currencies \n2) view exchange rates \n"))
+    print("\nHello! Welcome to the currency exchanger! We have over 25 different currency exchanges supported!")
+    que = int(input("Please enter the number of what you would like to do today: \n 1)  exchange currencies \n 2)  view exchange rates \n"))
     if que == 1:
         exchange_currency()
     elif que == 2:
@@ -50,7 +50,7 @@ values["USD"] = 1
 
 # Get user input to see which currencies they would like to exchange
 def exchange_currency():
-    print("\n(if you do not know your exchange symbol, please enter \"help\" to refer to the exchange rates page)\n")
+    print("\n(if you do not know your exchange symbol, please enter \"help\" to refer to the exchange rates page)")
     before_currency = input("Please enter the Exchange Symbol of the currency you wish to exchange: ")
     if before_currency.lower() == "help":
         print_currencies()
@@ -59,18 +59,20 @@ def exchange_currency():
         if before_currency in values:
             exchange_before = values[before_currency]
         else: 
-            print("Error: Exchange Symbol not found or not supported. ")
+            print("\nError: Exchange Symbol not found or not supported. ")
             exchange_currency()
-        before_value = int(input("How much " + str(before_currency) + " do you wish to exchange? "))
-        # ^ ASSUMES INPUT WILL BE INTEGER TRY EXCEPT CHECK IF INT OTHERWISE PRINT ERROR MESSAGE
+            return 0
         
+        # USER NOT GUARANTEED INPUT CHANGE 
+        before_value = int(input("How much " + str(before_currency) + " do you wish to exchange? "))
+
 
         after_currency = input("Please enter the Exchange Symbol of the currency you wish to receive: ")
         if after_currency in values:
             exchange_after = values[after_currency]
         else: 
             print("Error: Exchange Symbol not found or not supported. ")
-
+# SPLIT THESE TWO TOP AND BOTTOM IF ERROR, REPROMPT NOT CONTINUE AGAIN
         after_value = before_value // exchange_before * exchange_after
         after_value = round(after_value, 2)
         print("\n" + '\033[1m' + str(before_value) + " " + str(before_currency) + '\033[0m' + " was converted to " + '\033[1m' + str(after_value) + " " + str(after_currency) + '\033[0m')
@@ -78,14 +80,10 @@ def exchange_currency():
 
 
 
-
-
-
-
-
 # Print list of available currencies and values as well as their currency exchange symbols
 def print_currencies(): 
-    print("\n" + '\033[1m' + '\033[92m' + "Currency Exchange Rates: " + '\033[0m' + 
+    print("\nnote: Exchange rates collected on October 1, 2020.")
+    print('\033[1m' + '\033[92m' + "Currency Exchange Rates: " + '\033[0m' + 
   """
   AUD     Australian Dollar: 1.4003
   BRL     Brazilian Real: 5.6274
